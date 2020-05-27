@@ -1,0 +1,27 @@
+git notes
+
+need to do a git pull on the master repo to get submodule changes
+
+  $ git pull
+
+init and update everything
+
+  $git submodule update --init --recursiv
+
+easier git diff - TODO
+
+Now if you go back into the main project and run git diff --submodule you can
+see that the submodule was updated and get a list of commits that were added to
+it. If you don’t want to type --submodule every time you run git diff, you can
+set it as the default format by setting the diff.submodule config value to
+“log”.
+
+fetch and update everything
+
+   $git submodule update --remote
+
+   NOTE it assumes master. Set branch in .gitmodules to change.
+
+   or set it via git config -f .gitmodules submodule.DbConnector.branch stable
+
+
