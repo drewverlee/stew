@@ -4,9 +4,12 @@ need to do a git pull on the master repo to get submodule changes
 
   $ git pull
 
+   Git pull fetches submodules changes, it doesn't update them (what does that mean). oh it means that it didnt update the submodule.
+
+
 init and update everything
 
-  $git submodule update --init --recursiv
+  $git submodule update --init --recursive
 
 easier git diff - TODO
 
@@ -25,3 +28,46 @@ fetch and update everything
    or set it via git config -f .gitmodules submodule.DbConnector.branch stable
 
 
+see log of submodules from git
+
+    ❯ git log -p --submodule 
+
+
+
+make git pull like git pull --recurse-submodules
+
+     Moreover, if you want to make Git always pull with --recurse-submodules, you can set the configuration option submodule.recurse to true (this works for git pull since Git 2.15).
+
+
+
+remote vs 
+
+    git submodule update --remote goes into a submodule. git pull --recurse-submodules pulls new submodules
+
+
+
+not sure using --recurse-submodules matters bc you have to init
+
+so flawless is
+
+git pull (with our without submodule)
+git submodule update --init --recursive
+
+Search Results
+Featured snippet from the web
+If you pass --recurse-submodules to the git clone command, it will automatically initialize and update each submodule in the repository, including nested submodules if any of the submodules in the repository have submodules themselves.
+
+yes
+
+take aways
+
+* git config -f .gitmodules submodule.DbConnector.branch stable
+* git config -f diff.submodule log
+* git config -f submodule.recurse true 
+
+diff.submodule config value to
+“log”.
+
+
+
+stopped at "working at submodule"
